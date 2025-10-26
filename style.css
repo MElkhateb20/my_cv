@@ -533,104 +533,195 @@ body {
   ✅ MEDIA QUERIES for Mobile Devices
 =====================================
 */
+*/
 @media (max-width: 768px) {
   /*
   ---
   القسم العام: تغيير المسافات العامة
   ---
   */
-  header {
-    padding: 15px 20px; /* تقليل المسافة في الهيدر */
+  .section {
+    min-height: auto; /* مهم لعدم إجبار ارتفاع 100vh في الموبايل */
+    padding: 40px 20px; 
   }
 
-  .section {
-    padding: 40px 20px; /* تقليل المسافة في الأقسام */
+  .section-title {
+      font-size: 30px; /* تم رفع الحجم قليلاً */
+      margin-bottom: 30px;
   }
+  
+  /*
+  ---
+  HEADER (تعديلات لجعله متناسقًا) - تم الإبقاء عليها كما هي للضمان
+  ---
+  */
+  header {
+    padding: 15px 20px; 
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .logo {
+      font-size: 18px; /* تم رفع الحجم قليلاً */
+  }
+
+  nav {
+    display: flex; 
+    flex-wrap: nowrap; 
+    overflow-x: auto; /* شريط تمرير أفقي للروابط إذا كانت كثيرة */
+    -webkit-overflow-scrolling: touch; 
+    padding-bottom: 0px; 
+    margin-left: 10px; /* فصل بسيط بين اللوجو والروابط */
+  }
+  
+  nav a {
+    margin-left: 15px; /* تم رفع المسافة قليلاً */
+    font-size: 14px; /* تم رفع الحجم قليلاً */
+    flex-shrink: 0; 
+  }
+
 
   /*
   ---
-  قسم Home: ضبط الترتيب والحجم
+  قسم Home: ضبط الترتيب والحجم (تم عكس التصغير المبالغ فيه)
   ---
   */
   .home-section {
-    padding-top: 100px; /* تقليل المسافة العلوية */
+    padding-top: 100px; /* تم رفعه قليلاً */
   }
 
   .home-section .profile {
-    width: 200px; /* تصغير حجم الصورة الشخصية */
+    width: 200px; /* حجم معقول */
+    height: 200px;
+    margin-bottom: 25px;
   }
 
   .home-section .info h1 {
-    font-size: 35px; /* تصغير الخط الرئيسي */
+    font-size: 35px; /* حجم معقول */
   }
 
   .home-section .info h2 {
-    font-size: 20px; /* تصغير الخط الثانوي */
+    font-size: 22px; /* حجم معقول */
+    margin-bottom: 20px;
   }
 
   .buttons {
-    flex-direction: column; /* جعل الأزرار تأتي فوق بعضها البعض */
-    gap: 15px; /* تقليل المسافة بين الأزرار */
+    flex-direction: column; 
+    gap: 15px; /* تم رفع المسافة قليلاً */
+    margin: 20px 0;
   }
+
+  .btn-outline,
+  .btn-fill {
+      padding: 12px 25px; /* تم رفع البادينغ قليلاً */
+      font-size: 16px;
+      width: 85%;
+      max-width: 300px; /* توسيع الأزرار قليلاً */
+  }
+  
+  .socials {
+      gap: 20px;
+      margin-top: 15px;
+  }
+  
+  .socials img {
+      width: 28px; /* حجم معقول */
+  }
+  
 
   /*
   ---
-  قسم Work (تجربة العمل):
+  قسم Work (تجربة العمل): (تم عكس التصغير المبالغ فيه)
   ---
   */
   section.work-section {
-    margin-top: 50px;
+    margin-top: 40px;
+  }
+  
+  .work-slider {
+      height: 220px; /* تم رفعه قليلاً */
+  }
+  
+  .work-card {
+      min-width: 220px; /* تم رفعه قليلاً */
+  }
+  
+  .work-card img {
+      width: 60px; /* تم رفعه قليلاً */
+      height: 60px;
   }
 
   /*
   ---
-  قسم Skills (المهارات): تحسين شكل الشبكة
-  المشكلة: العناصر ظاهرة تحت بعضها وشكلها غير جميل.
-  الحل: زيادة عرض العنصر داخل شبكة المهارات لكي يظهر 2-3 عناصر في الصف.
+  قسم Skills (المهارات): تحسين التوزيع بدون تصغير مبالغ فيه
   ---
   */
   .skills-grid {
-    gap: 15px; /* تقليل المسافة بين عناصر الشبكة */
+    gap: 15px; /* مسافة معقولة */
   }
   
   .skills-grid div {
-    /* السماح بظهور 2-3 أيقونات في الصف */
-    width: 100px;
-    padding: 15px;
+    /* يسمح بظهور 3-4 أيقونات في الصف بحجم مقبول */
+    width: 100px; /* حجم معقول */
+    padding: 12px;
+    border-radius: 12px;
+  }
+
+  .skills-grid img {
+    width: 50px; /* حجم معقول */
+    height: 50px;
+    margin-bottom: 5px;
+  }
+
+  .skills-grid p {
+    font-size: 13px; /* حجم معقول */
   }
 
   /*
   ---
-  قسم Projects (المشاريع): ضبط الشبكة
+  قسم Projects (المشاريع): ضبط الشبكة (تم عكس التصغير المبالغ فيه)
   ---
   */
   .projects-grid {
-    /* جعل كل مشروع يأخذ كامل عرض الموبايل تقريباً */
     grid-template-columns: 1fr; /* عمود واحد فقط */
     gap: 30px;
   }
   
   .project-card {
-    width: 100%; /* اجعل الكارد يملأ العرض المتاح */
-    max-width: 350px; /* وضع حد أقصى للعرض لتبدو أفضل في التابلت الصغير */
-    margin: 0 auto; /* توسيط الكارد */
+    width: 90%; /* تم تقليل العرض قليلاً لترك هامش جانبي */
+    max-width: 400px; /* رفع الحد الأقصى قليلاً */
+    margin: 0 auto; 
+    animation: none !important; 
+  }
+  
+  .project-card img {
+      height: 200px; /* تم رفعه قليلاً */
   }
   
   /*
   ---
-  إخفاء تأثير الـ Popup في الموبايل لعدم إرباك المستخدم
+  إلغاء تأثيرات الـ Hover المربكة على الأجهزة اللمسية (تم الإبقاء عليها)
   ---
   */
+  .project-card:hover {
+      transform: none;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  }
+  
+  .project-card::before,
+  .project-card:hover::before,
   .project-card:hover .project-popup,
   .project-card:hover::after {
-    display: none;
-    opacity: 0;
-    pointer-events: none;
+    display: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
   }
   
   /*
   ---
-  إلغاء الحركات المستمرة التي قد تؤثر على الأداء في الموبايل
+  إلغاء جميع الحركات المستمرة في الموبايل لضمان الأداء (تم الإبقاء عليها)
   ---
   */
   .profile, 
@@ -639,9 +730,50 @@ body {
   .btn-outline, 
   .socials img, 
   .skills-grid img,
-  .project-card,
   body {
       animation: none !important;
       transform: none !important;
   }
+}
+
+/*
+=====================================
+  ✅ DOWNLOAD BUTTON - تم إضافة تنسيقاته
+=====================================
+*/
+.btn-download {
+  display: inline-block;
+  background: linear-gradient(90deg, #ff4d00, #ff7b00);
+  color: #fff;
+  padding: 12px 35px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 16px;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 15px rgba(255, 77, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-download::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: skewX(-20deg);
+  transition: all 0.5s ease;
+}
+
+.btn-download:hover::before {
+  left: 100%;
+}
+
+.btn-download:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(255, 77, 0, 0.6);
+  background: linear-gradient(90deg, #ff7b00, #ff4d00);
 }
