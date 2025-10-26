@@ -524,3 +524,32 @@ body {
   box-shadow: 0 8px 25px rgba(255, 77, 0, 0.6);
   background: linear-gradient(90deg, #ff7b00, #ff4d00);
 }
+
+
+
+
+@media (max-width: 768px) {
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* صفين */
+    gap: 20px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .skills-grid {
+    grid-template-columns: 1fr; /* عمود واحد */
+    gap: 15px;
+  }
+
+  .home-section .profile {
+    width: 200px; /* تصغير الصورة الشخصية */
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 15px;
+  }
+}
+
