@@ -528,28 +528,120 @@ body {
 
 
 
+/*
+=====================================
+  ✅ MEDIA QUERIES for Mobile Devices
+=====================================
+*/
 @media (max-width: 768px) {
-  .skills-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* صفين */
-    gap: 20px;
+  /*
+  ---
+  القسم العام: تغيير المسافات العامة
+  ---
+  */
+  header {
+    padding: 15px 20px; /* تقليل المسافة في الهيدر */
   }
-}
 
+  .section {
+    padding: 40px 20px; /* تقليل المسافة في الأقسام */
+  }
 
-@media (max-width: 480px) {
-  .skills-grid {
-    grid-template-columns: 1fr; /* عمود واحد */
-    gap: 15px;
+  /*
+  ---
+  قسم Home: ضبط الترتيب والحجم
+  ---
+  */
+  .home-section {
+    padding-top: 100px; /* تقليل المسافة العلوية */
   }
 
   .home-section .profile {
-    width: 200px; /* تصغير الصورة الشخصية */
+    width: 200px; /* تصغير حجم الصورة الشخصية */
+  }
+
+  .home-section .info h1 {
+    font-size: 35px; /* تصغير الخط الرئيسي */
+  }
+
+  .home-section .info h2 {
+    font-size: 20px; /* تصغير الخط الثانوي */
   }
 
   .buttons {
-    flex-direction: column;
-    gap: 15px;
+    flex-direction: column; /* جعل الأزرار تأتي فوق بعضها البعض */
+    gap: 15px; /* تقليل المسافة بين الأزرار */
+  }
+
+  /*
+  ---
+  قسم Work (تجربة العمل):
+  ---
+  */
+  section.work-section {
+    margin-top: 50px;
+  }
+
+  /*
+  ---
+  قسم Skills (المهارات): تحسين شكل الشبكة
+  المشكلة: العناصر ظاهرة تحت بعضها وشكلها غير جميل.
+  الحل: زيادة عرض العنصر داخل شبكة المهارات لكي يظهر 2-3 عناصر في الصف.
+  ---
+  */
+  .skills-grid {
+    gap: 15px; /* تقليل المسافة بين عناصر الشبكة */
+  }
+  
+  .skills-grid div {
+    /* السماح بظهور 2-3 أيقونات في الصف */
+    width: 100px;
+    padding: 15px;
+  }
+
+  /*
+  ---
+  قسم Projects (المشاريع): ضبط الشبكة
+  ---
+  */
+  .projects-grid {
+    /* جعل كل مشروع يأخذ كامل عرض الموبايل تقريباً */
+    grid-template-columns: 1fr; /* عمود واحد فقط */
+    gap: 30px;
+  }
+  
+  .project-card {
+    width: 100%; /* اجعل الكارد يملأ العرض المتاح */
+    max-width: 350px; /* وضع حد أقصى للعرض لتبدو أفضل في التابلت الصغير */
+    margin: 0 auto; /* توسيط الكارد */
+  }
+  
+  /*
+  ---
+  إخفاء تأثير الـ Popup في الموبايل لعدم إرباك المستخدم
+  ---
+  */
+  .project-card:hover .project-popup,
+  .project-card:hover::after {
+    display: none;
+    opacity: 0;
+    pointer-events: none;
+  }
+  
+  /*
+  ---
+  إلغاء الحركات المستمرة التي قد تؤثر على الأداء في الموبايل
+  ---
+  */
+  .profile, 
+  .info h1, 
+  .btn-fill, 
+  .btn-outline, 
+  .socials img, 
+  .skills-grid img,
+  .project-card,
+  body {
+      animation: none !important;
+      transform: none !important;
   }
 }
-
