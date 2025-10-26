@@ -1,0 +1,526 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background: #fff;
+  color: #222;
+  scroll-behavior: smooth;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 80px;
+  position: fixed;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  z-index: 1000;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.logo span {
+  color: #ff4d00;
+}
+
+nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #ff4d00;
+}
+
+/* Sections */
+.section {
+  min-height: auto;
+  padding: 60px 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Home Section */
+.home-section {
+  padding-top: 160px; /* كانت 150px — زودناها لتحت شوية */
+}
+
+
+.home-section .profile {
+  width: 300px;
+  border-radius: 50%;
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+}
+
+.home-section .info h1 {
+  font-size: 45px;
+  color: #ff4d00;
+}
+
+.home-section .info h2 {
+  font-size: 25px;
+  font-weight: 600;
+}
+
+.buttons {
+  margin: 25px 0;
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.btn-outline,
+.btn-fill {
+  padding: 10px 25px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-outline {
+  border: 2px solid #222;
+  color: #222;
+}
+
+.btn-fill {
+  background: #222;
+  color: #fff;
+}
+
+.btn-outline:hover {
+  background: #222;
+  color: #fff;
+}
+
+.btn-fill:hover {
+  background: #ff4d00;
+}
+
+.socials {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.socials img {
+  width: 28px;
+  transition: 0.3s;
+}
+
+.socials img:hover {
+  transform: scale(1.2);
+}
+
+/* Work Section */
+/* ===== Work Experience Slider ===== */
+section.work-section {
+  display: block;
+  margin-top: 100px;
+}
+
+.work-section .section-title {
+  margin-top: 20px;
+  margin-bottom: 40px;
+}
+
+
+.work-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 25px;
+  padding: 20px 0;
+  height: 240px; /* ممكن تزودها شوية لو الكروت مش ظاهرة كاملة */
+  
+  /* ✅ إخفاء الشريط الأفقي */
+  scrollbar-width: none;        /* للفايرفوكس */
+  -ms-overflow-style: none;     /* للإنترنت إكسبلورر و Edge القديم */
+}
+
+.work-slider::-webkit-scrollbar {
+  display: none;                /* ✅ للكروم والسفاري */
+}
+
+
+
+.work-track {
+  display: flex;
+  gap: 30px;
+  width: max-content;
+  animation: scrollWork 25s linear infinite;
+}
+
+.work-card {
+  min-width: 250px;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  padding: 20px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.work-card:hover {
+  transform: scale(1.1);
+}
+
+.work-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.work-card p {
+  margin-top: 10px;
+  font-weight: 600;
+}
+
+/* حركة السلايدر */
+@keyframes scrollWork {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+
+/* Skills */
+/* Skills */
+.skills-section {
+  padding: 60px 80px;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap; /* يخلي العناصر تنزل تحت لو الشاشة صغيرة */
+  justify-content: center;
+  align-items: center;
+  gap: 30px; /* المسافة بين العناصر */
+  margin-top: 40px;
+}
+
+.skills-grid div {
+  background: #fff;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+  width: 130px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.skills-grid div:hover {
+  transform: scale(1.1);
+}
+
+.skills-grid img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.skills-grid p {
+  font-weight: 600;
+  color: #222;
+}
+
+
+/* Projects Section */
+/* ====== PROJECTS SECTION ====== */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  justify-content: center;
+  align-items: start;
+  margin-top: 60px;
+  width: 100%;
+}
+
+
+.project-card {
+  position: relative;
+  width: 300px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  text-align: center;
+  transition: all 0.4s ease;
+  transform-style: preserve-3d;
+  animation: floatCard 5s ease-in-out infinite;
+}
+
+/* Hover تأثير 3D + إضاءة */
+.project-card:hover {
+  transform: rotateY(10deg) rotateX(5deg) scale(1.05);
+  box-shadow: 0 15px 40px rgba(255, 77, 0, 0.5);
+}
+
+/* تأثير تلميع خفيف */
+.project-card::before {
+  content: "";
+  position: absolute;
+  top: -75%;
+  left: -75%;
+  width: 250%;
+  height: 250%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transform: rotate(25deg);
+  opacity: 0;
+  transition: 0.6s;
+}
+
+.project-card:hover::before {
+  opacity: 1;
+  animation: shine 1.5s forwards;
+}
+
+/* الصورة */
+.project-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: contain;
+  background-color: #fafafa;
+  display: block;
+}
+
+/* زرار View */
+.view-btn {
+  position: relative;
+  z-index: 1001;
+  width: 80%;              /* ياخد 80% من عرض الكارد */
+  max-width: 220px;
+  height: 42px;            /* ✅ ارتفاع متوسط ومتناسق */
+  background: linear-gradient(90deg, #ff4d00, #ff7b00);
+  color: #fff;
+  border: none;
+  border-radius: 12px;     /* زوايا دائرية ناعمة */
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 15px auto 8px;
+  display: block;
+  box-shadow: 0 4px 15px rgba(255, 77, 0, 0.3);
+}
+
+.view-btn:hover {
+  background: linear-gradient(90deg, #ff7b00, #ff4d00);
+  transform: translateY(-3px) scale(1.04); /* حركة خفيفة لأعلى */
+  box-shadow: 0 6px 20px rgba(255, 77, 0, 0.5);
+}
+
+
+
+
+
+/* ====== ANIMATIONS ====== */
+@keyframes floatCard {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes shine {
+  0% { transform: translateX(-100%) rotate(25deg); opacity: 0; }
+  50% { opacity: 1; }
+  100% { transform: translateX(100%) rotate(25deg); opacity: 0; }
+}
+
+/* ====== POPUP (تفاصيل المشروع) ====== */
+.project-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  background: #fff;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  border-radius: 20px;
+  padding: 30px;
+  max-width: 500px;
+  width: 80%;
+  text-align: left;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.4s ease;
+  z-index: 999;
+}
+
+/* يظهر البوب اب فقط لما الماوس فوق الكارد */
+.project-card:hover .project-popup {
+  opacity: 1;
+  pointer-events: all;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* خلفية شفافة عند ظهور التفاصيل */
+.project-card:hover::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 998;
+}
+
+.project-popup h3 {
+  color: #ff4d00;
+  margin-bottom: 10px;
+}
+
+.project-popup p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #333;
+}
+
+
+/* ====== CONTINUOUS ANIMATIONS ====== */
+
+/* خلفية متحركة بلطف */
+body {
+  background: linear-gradient(135deg, #ffffff, #f9f9f9, #fff, #f3f3f3);
+  background-size: 400% 400%;
+  animation: gradientMove 15s ease infinite;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* الصورة الشخصية تتحرك بلطف */
+.profile {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+/* اسمك متوهّج */
+.info h1 {
+  text-shadow: 0 0 10px rgba(255, 77, 0, 0.7), 0 0 20px rgba(255, 77, 0, 0.4);
+  animation: glow 2.5s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 5px rgba(255, 77, 0, 0.4); }
+  to { text-shadow: 0 0 25px rgba(255, 77, 0, 1); }
+}
+
+/* الأزرار فيها نبض لطيف */
+.btn-fill, .btn-outline {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* أيقونات السوشيال بتهتز بخفة */
+.socials img {
+  animation: swing 4s ease-in-out infinite;
+}
+
+@keyframes swing {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(2deg); }
+  75% { transform: rotate(-2deg); }
+}
+
+/* أيقونات المهارات بتلف لفه بسيطة */
+.skills-grid img {
+  animation: rotateSkill 8s linear infinite;
+}
+
+@keyframes rotateSkill {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Scrollbar custom */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #f3f3f3;
+}
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #ff4d00, #222);
+  border-radius: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+/*
+/*
+
+/* ====== DOWNLOAD BUTTON ====== */
+.btn-download {
+  display: inline-block;
+  background: linear-gradient(90deg, #ff4d00, #ff7b00);
+  color: #fff;
+  padding: 12px 35px;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 16px;
+  transition: all 0.4s ease;
+  box-shadow: 0 4px 15px rgba(255, 77, 0, 0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-download::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  transform: skewX(-20deg);
+  transition: all 0.5s ease;
+}
+
+.btn-download:hover::before {
+  left: 100%;
+}
+
+.btn-download:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(255, 77, 0, 0.6);
+  background: linear-gradient(90deg, #ff7b00, #ff4d00);
+}
