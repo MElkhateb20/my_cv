@@ -535,12 +535,22 @@ body {
 */
 @media (max-width: 768px) {
   /*
-  ---
-  القسم العام: تغيير المسافات العامة
-  ---
+  --- القسم العام: تغيير المسافات العامة ---
   */
   header {
     padding: 15px 20px; /* تقليل المسافة في الهيدر */
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;      /* يسمح للكلمات بالانتقال لسطر جديد لو ضاقت */
+    justify-content: center;
+    gap: 10px;            /* مسافة أصغر بين الروابط */
+  }
+
+  nav a {
+    margin-left: 0;       /* إزالة الهامش الكبير */
+    font-size: 14px;      /* تصغير الخط قليلًا */
   }
 
   .section {
@@ -548,78 +558,74 @@ body {
   }
 
   /*
-  ---
-  قسم Home: ضبط الترتيب والحجم
-  ---
+  --- قسم Home: ضبط الترتيب والحجم ---
   */
   .home-section {
     padding-top: 100px; /* تقليل المسافة العلوية */
   }
 
   .home-section .profile {
-    width: 200px; /* تصغير حجم الصورة الشخصية */
+    width: 180px; /* تصغير حجم الصورة الشخصية أكثر */
   }
 
   .home-section .info h1 {
-    font-size: 35px; /* تصغير الخط الرئيسي */
+    font-size: 30px; /* تصغير الخط الرئيسي */
   }
 
   .home-section .info h2 {
-    font-size: 20px; /* تصغير الخط الثانوي */
+    font-size: 18px; /* تصغير الخط الثانوي */
   }
 
   .buttons {
     flex-direction: column; /* جعل الأزرار تأتي فوق بعضها البعض */
-    gap: 15px; /* تقليل المسافة بين الأزرار */
+    gap: 12px; /* تقليل المسافة بين الأزرار */
   }
 
   /*
-  ---
-  قسم Work (تجربة العمل):
-  ---
+  --- قسم Work ---
   */
   section.work-section {
     margin-top: 50px;
   }
 
   /*
-  ---
-  قسم Skills (المهارات): تحسين شكل الشبكة
-  المشكلة: العناصر ظاهرة تحت بعضها وشكلها غير جميل.
-  الحل: زيادة عرض العنصر داخل شبكة المهارات لكي يظهر 2-3 عناصر في الصف.
-  ---
+  --- قسم Skills: تصغير أكثر ---
   */
   .skills-grid {
-    gap: 15px; /* تقليل المسافة بين عناصر الشبكة */
+    gap: 10px; /* تقليل المسافة بين العناصر */
   }
   
   .skills-grid div {
-    /* السماح بظهور 2-3 أيقونات في الصف */
-    width: 100px;
-    padding: 15px;
+    width: 80px;       /* عرض أصغر لكل Skill */
+    padding: 10px;     /* تقليل البادينج */
+  }
+
+  .skills-grid img {
+    width: 40px;       /* تصغير الأيقونات */
+    height: 40px;
+    margin-bottom: 5px;
+  }
+
+  .skills-grid p {
+    font-size: 12px;   /* تصغير النص */
   }
 
   /*
-  ---
-  قسم Projects (المشاريع): ضبط الشبكة
-  ---
+  --- قسم Projects ---
   */
   .projects-grid {
-    /* جعل كل مشروع يأخذ كامل عرض الموبايل تقريباً */
-    grid-template-columns: 1fr; /* عمود واحد فقط */
+    grid-template-columns: 1fr; /* عمود واحد */
     gap: 30px;
   }
   
   .project-card {
-    width: 100%; /* اجعل الكارد يملأ العرض المتاح */
-    max-width: 350px; /* وضع حد أقصى للعرض لتبدو أفضل في التابلت الصغير */
-    margin: 0 auto; /* توسيط الكارد */
+    width: 100%; 
+    max-width: 350px; 
+    margin: 0 auto; 
   }
   
   /*
-  ---
-  إخفاء تأثير الـ Popup في الموبايل لعدم إرباك المستخدم
-  ---
+  --- إخفاء Popup ---
   */
   .project-card:hover .project-popup,
   .project-card:hover::after {
@@ -629,9 +635,7 @@ body {
   }
   
   /*
-  ---
-  إلغاء الحركات المستمرة التي قد تؤثر على الأداء في الموبايل
-  ---
+  --- إلغاء الحركات المستمرة ---
   */
   .profile, 
   .info h1, 
