@@ -247,33 +247,33 @@ section.work-section {
 /* Projects Section */
 /* ====== PROJECTS SECTION ====== */
 .projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 40px;
-  justify-content: center;
-  align-items: start;
-  margin-top: 60px;
-  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  justify-content: center;
+  align-items: start;
+  margin-top: 60px;
+  width: 100%;
 }
 
 
 .project-card {
-  position: relative;
-  width: 300px;
-  background: #fff;
-  border-radius: 18px;
-  box-shadow: 0 15px 40px rgba(255, 77, 0, 0.5); /* Moved here to be permanent */
-  overflow: hidden;
-  text-align: center;
-  transition: all 0.4s ease;
-  transform-style: preserve-3d;
-  animation: floatCard 5s ease-in-out infinite;
+  position: relative;
+  width: 300px;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  overflow: hidden;
+  text-align: center;
+  transition: all 0.4s ease;
+  transform-style: preserve-3d;
+  animation: floatCard 5s ease-in-out infinite;
 }
 
 /* Hover تأثير 3D + إضاءة */
 .project-card:hover {
-  transform: rotateY(10deg) rotateX(5deg) scale(1.05);
-  /* box-shadow: 0 15px 40px rgba(255, 77, 0, 0.5); -- This line is now removed or commented out from here */
+  transform: rotateY(10deg) rotateX(5deg) scale(1.05);
+  box-shadow: 0 15px 40px rgba(255, 77, 0, 0.5);
 }
 
 /* تأثير تلميع خفيف */
