@@ -649,3 +649,58 @@ body {
       transform: none !important;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ====== Typing Effect ====== */
+.typed-text {
+  color: #ff4d00;
+  font-weight: 700;
+  font-size: 26px;
+}
+
+.cursor {
+  display: inline-block;
+  width: 3px;
+  background-color: #ff4d00;
+  margin-left: 3px;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+
+.details {
+  font-size: 15px;
+  color: #555;
+  margin-top: 10px;
+  font-weight: 500;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .typed-text {
+    font-size: 20px;
+  }
+  .details {
+    font-size: 13px;
+  }
+}
