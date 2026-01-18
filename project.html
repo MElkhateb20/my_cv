@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Details | Mohamed Elkhateb</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Specific Styles for Project Details */
+        .project-hero {
+            padding-top: 120px;
+            padding-bottom: 60px;
+            text-align: center;
+        }
+
+        .project-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .project-hero h2 {
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            margin-bottom: 40px;
+        }
+
+        .project-main-image {
+            width: 100%;
+            height: auto;
+            max-height: 600px;
+            /* Increased height */
+            object-fit: contain;
+            /* Shows full image */
+            background-color: rgba(0, 0, 0, 0.5);
+            /* Background for non-square images */
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            /* Slight padding */
+        }
+
+        .project-content-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        .content-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 30px;
+            border-radius: 20px;
+            margin-bottom: 30px;
+        }
+
+        .content-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+            border-bottom: 1px solid var(--glass-border);
+            padding-bottom: 10px;
+        }
+
+        .content-card p {
+            color: var(--text-muted);
+            margin-bottom: 15px;
+        }
+
+        .steps-list {
+            list-style: none;
+            counter-reset: step-counter;
+        }
+
+        .steps-list li {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 15px;
+            color: var(--text-muted);
+        }
+
+        .steps-list li::before {
+            counter-increment: step-counter;
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 25px;
+            height: 25px;
+            background: var(--accent-color);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 25px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .sidebar-card {
+            position: sticky;
+            top: 100px;
+        }
+
+        .project-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .btn-full {
+            width: 100%;
+            text-align: center;
+        }
+
+        .btn-document {
+            background: transparent;
+            border: 2px solid var(--accent-color);
+            color: white;
+        }
+
+        .btn-document:hover {
+            background: var(--accent-color);
+        }
+
+        @media (max-width: 900px) {
+            .project-content-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .sidebar-card {
+                position: static;
+                order: -1;
+                /* Move sidebar to top on mobile */
+            }
+        }
+
+        .modeling-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 1px solid var(--glass-border);
+            margin-top: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Background Elements -->
+    <div class="bg-gradient-1"></div>
+    <div class="bg-gradient-2"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">M<span>.</span>Elkhateb</a>
+            <a href="index.html" class="btn-secondary"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Hero -->
+        <section class="project-hero">
+            <h1 id="p-title">Project Title</h1>
+            <h2 id="p-category">Project Category</h2>
+            <img id="p-image" src="" alt="Project Image" class="project-main-image">
+        </section>
+
+        <!-- Content -->
+        <div class="project-content-grid">
+
+            <!-- Left Column: Details -->
+            <div class="main-content">
+
+                <section class="content-card animate-in">
+                    <h3>Summary</h3>
+                    <p id="p-summary">Project summary goes here...</p>
+                </section>
+
+                <section class="content-card animate-in">
+                    <h3>Steps</h3>
+                    <ul id="p-steps" class="steps-list">
+                        <!-- Steps injected by JS -->
+                    </ul>
+                </section>
+
+                <section class="content-card animate-in">
+                    <h3>Data Modeling</h3>
+                    <!-- Changed from p to img -->
+                    <img id="p-modeling-img" src="" alt="Data Modeling Schema" class="modeling-image">
+                    <!-- Optional: Keep a description if needed, or hide it -->
+                    <p id="p-modeling-desc" style="display:none;"></p>
+                </section>
+
+            </div>
+
+            <!-- Right Column: Actions -->
+            <div class="sidebar">
+                <div class="content-card sidebar-card animate-in">
+                    <h3>Actions</h3>
+                    <div class="project-actions">
+                        <a id="p-link" href="#" target="_blank" class="btn-primary btn-full">
+                            <i class="fas fa-chart-pie"></i> View Dashboard
+                        </a>
+
+                        <!-- New Document Button -->
+                        <a id="p-doc-link" href="#" target="_blank" class="btn-primary btn-full btn-document"
+                            style="display: none;">
+                            <i class="fas fa-file-alt"></i> View Document
+                        </a>
+                        <a href="index.html#portfolio" class="btn-secondary btn-full">
+                            <i class="fas fa-th"></i> More Projects
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mohamed Elkhateb. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="project-data.js"></script>
+    <script>
+        // Project Loader Script
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Get Project ID from URL
+            const params = new URLSearchParams(window.location.search);
+            const projectId = params.get('id');
+
+            // 2. Load Data
+            const project = projectsData[projectId];
+
+            // 3. Handle Not Found
+            if (!project) {
+                document.body.innerHTML = "<h1 style='color:white; text-align:center; padding-top:100px;'>Project Not Found</h1><p style='color:#ccc; text-align:center;'><a href='index.html'>Return Home</a></p>";
+                return;
+            }
+
+            // 4. Inject Content
+            document.title = `${project.title} | Mohamed Elkhateb`;
+            document.getElementById('p-title').textContent = project.title;
+            document.getElementById('p-category').textContent = project.category;
+            document.getElementById('p-image').src = project.image;
+            document.getElementById('p-link').href = project.dashboardLink;
+            document.getElementById('p-summary').textContent = project.summary;
+
+            // Handle Modeling Image
+            const modelingImg = document.getElementById('p-modeling-img');
+            if (project.modelingImage) {
+                modelingImg.src = project.modelingImage;
+                modelingImg.style.display = 'block';
+            } else {
+                // Fallback if no image provided? Or hide?
+                modelingImg.style.display = 'none';
+            }
+
+            // Handle Document Button
+            const docBtn = document.getElementById('p-doc-link');
+            if (project.documentLink) {
+                docBtn.href = project.documentLink;
+                docBtn.style.display = 'inline-block';
+            } else {
+                docBtn.style.display = 'none';
+            }
+
+            // Steps List
+            const stepsContainer = document.getElementById('p-steps');
+            project.steps.forEach(step => {
+                const li = document.createElement('li');
+                li.textContent = step;
+                stepsContainer.appendChild(li);
+            });
+        });
+    </script>
+</body>
+
+</html>

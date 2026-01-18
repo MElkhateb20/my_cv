@@ -1,272 +1,422 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Elkhateb | Data Analyst & Engineer</title>
 
-  <meta charset="UTF-8" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;900&family=Inter:wght@300;400;500;600&display=swap"
+        rel="stylesheet">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-  <title>Mohamed Elkhateb | Data Analyst</title>
-
-  <link rel="stylesheet" href="style.css" />
-
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-  <!-- Header -->
+    <!-- Background Elements -->
+    <div class="bg-gradient-1"></div>
+    <div class="bg-gradient-2"></div>
 
-  <header>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">M<span>.</span>Elkhateb</a>
 
-    <div class="logo"><span>Mohamed</span> Elkhateb</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#contact" class="btn-primary">Contact Me</a></li>
+            </ul>
 
-    <nav>
-
-      <a href="#home">Home</a>
-
-      <a href="#work">Work</a>
-
-      <a href="#skills">Skills</a>
-
-      <a href="#projects">Projects</a>
-
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
     </nav>
 
-  </header>
-
-
-
-  <!-- Home Section -->
-
-  <section id="home" class="section home-section" style="padding-top: 120px;">
-
-    <div class="content">
-
-      <img src="assets/images/mohamed.jpg" alt="Mohamed Elkhateb" class="profile" />
-
-<div class="info">
-  <p>Hello I'm</p>
-  <h1>Mohamed Elkhateb</h1>
-  
-  <h2>
-    <span class="typed-text"></span>
-    <span class="cursor">&nbsp;</span>
-  </h2>
-
-  <p class="details">
-    +2 Years Experience • Cairo • Graduate from Al-Azhar University (Computer Engineering, 2025)
-  </p>
-
-  <div class="buttons">
-    <a href="https://drive.google.com/file/d/1rDT2Nq77vbCpO96i__NG4cNI8m7NJe3V/view?usp=sharing" class="btn-download" download>
-      Download CV
-    </a>
-    <a href="mailto:mohamedelkhateb329@gmail.com" class="btn-fill">Hire Me</a>
-  </div>
-
-  <div class="socials">
-    <a href="https://github.com" target="_blank"><img src="assets/icons/github.svg" alt="GitHub" /></a>
-    <a href="https://www.linkedin.com/in/mohamed-el-khateb-039a3b247/" target="_blank"><img src="assets/icons/linkedin.svg" alt="LinkedIn" /></a>
-    <a href="https://khamsat.com/user/mohamed_elkhateb5" target="_blank"><img src="assets/icons/khamsat.svg" alt="Khamsat" /></a>
-  </div>
-</div>
-
-
-  </section>
-
-
-
-  <!-- Work Experience -->
-
-  <section id="work" class="section work-section">
-
-    <h2 class="section-title">Work Experience</h2>
-
-    <div class="work-slider">
-
-      <div class="work-track">
-
-        <div class="work-card"><img src="assets/images/nti.png" /><p>Instructor @ NTI - وزارة الاتصالات المصرية</p></div>
-
-        <div class="work-card"><img src="assets/images/trickaa.png" /><p>Data Analyst @ Trickaa</p></div>
-
-        <div class="work-card"><img src="assets/images/samsung.png" /><p>Intern @ Samsung</p></div>
-
-        <div class="work-card"><img src="assets/images/orange.png" /><p>Intern @ Orange</p></div>
-
-        <div class="work-card"><img src="assets/images/nti-trainee.png" /><p>Trainee @ NTI</p></div>
-
-      </div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- Skills -->
-
-  <section id="skills" class="section skills-section">
-
-    <h2 class="section-title">Skills</h2>
-
-    <div class="skills-grid">
-
-      <div><img src="assets/images/python.png" /><p>Python</p></div>
-
-      <div><img src="assets/images/java.png" /><p>Java</p></div>
-
-      <div><img src="assets/images/cpp.png" /><p>C++</p></div>
-
-      <div><img src="assets/images/database.png" /><p>Database</p></div>
-
-      <div><img src="assets/images/excel.png" /><p>Excel</p></div>
-
-      <div><img src="assets/images/vba.png" /><p>VBA</p></div>
-
-      <div><img src="assets/images/gscript.png" /><p>Google App Script</p></div>
-
-      <div><img src="assets/images/appsheet.png" /><p>Google AppSheet</p></div>
-
-      <div><img src="assets/images/powerbi.png" /><p>Power BI</p></div>
-
-      <div><img src="assets/images/webscraping.png" /><p>Web Scraping</p></div>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- Projects -->
-
-  <section id="projects" class="section projects-section">
-
-   <h2>My Projects</h2>
-
-  <p style="font-size: 2rem; font-weight: bold; color: #333; text-align: center; margin-top: 20px;">
-
-    +90 Projects Completed
-
-  </p>
-
-    <div class="projects-grid">
-
-
-
-      <a href="https://app.powerbi.com/view?r=eyJrIjoiZDQxNjU5MzItMjE0Ni00NjEwLTk3ZTMtODVkMDg4MTI5NjBmIiwidCI6Ijc0MjY4YzVhLWU1MjItNDY2YS1iMDg4LWQ0NDQ3MzNiNjJjOCJ9" target="_blank" class="project-card">
-        <img src="assets/images/project1.jpg" alt="Project 1" />
-        <div class="project-popup">
-          <h3>Hospital Dashboard</h3>
-          <p>مشروع - مستشفى الملك خالد</p>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <span class="greeting">Hello, I'm</span>
+                <h1 class="hero-title">Mohamed Elkhateb</h1>
+                <h2 class="hero-subtitle">I'm a <span class="typed-text"></span><span class="cursor">|</span></h2>
+                <p class="hero-description">
+                    Computer Engineering Graduate (2025) & Data Analyst based in Cairo.
+                    Transforming raw data into actionable insights with +2 years of experience.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#portfolio" class="btn-primary">View My Work</a>
+                    <a href="https://drive.google.com/file/d/1rDT2Nq77vbCpO96i__NG4cNI8m7NJe3V/view?usp=sharing"
+                        class="btn-secondary" download><i class="fas fa-download"></i> Download CV</a>
+                </div>
+                <div class="social-links">
+                    <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/mohamed-el-khateb-039a3b247/" target="_blank"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a href="https://khamsat.com/user/mohamed_elkhateb5" target="_blank"><i
+                            class="fas fa-briefcase"></i></a>
+                </div>
+            </div>
+            <div class="hero-image-wrapper">
+                <div class="hero-blob"></div>
+                <img src="assets/images/mohamed.jpg" alt="Mohamed Elkhateb" class="hero-img">
+            </div>
         </div>
-      </a>
+    </section>
 
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container about-container">
+            <div class="about-content">
+                <h2 class="section-heading">About <span>Me</span></h2>
+                <p class="about-text">
+                    I am a passionate <strong>Data Analyst</strong> and <strong>Computer Engineer</strong> with a strong
+                    foundation in building data-driven solutions.
+                    Graduating from Al-Azhar University in 2025, I have honed my skills in Python, SQL, and Power BI to
+                    help businesses make informed decisions.
+                </p>
+                <p class="about-text">
+                    Beyond code and charts, I am a problem solver who loves automating workflows and optimizing
+                    processes.
+                    Whether it's building a complex dashboard or scripting a web scraper, I prioritize efficiency and
+                    clarity.
+                </p>
 
-       <a href="https://app.powerbi.com/view?r=eyJrIjoiNWZlN2FjNjEtN2Q2NS00ZTk3LTkyZjItMWMxMTk1YjcyMmNjIiwidCI6Ijc0MjY4YzVhLWU1MjItNDY2YS1iMDg4LWQ0NDQ3MzNiNjJjOCJ9" target="_blank" class="project-card">
-        <img src="assets/images/project3.jpg" alt="Project 3" />
-        <div class="project-popup">
-          <h3>Sales Dashboard</h3>
-          <p>مشروع تحليلي ل بيانات المبيعات</p>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <h3>+2</h3>
+                        <p>Years Experience</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>+90</h3>
+                        <p>Projects Completed</p>
+                    </div>
+                    <div class="stat-item">
+                        <h3>24/7</h3>
+                        <p>Support</p>
+                    </div>
+                </div>
+            </div>
+            <div class="about-visual">
+                <div class="glass-card">
+                    <i class="fas fa-code-branch"></i>
+                    <h4>Problem Solver</h4>
+                </div>
+                <div class="glass-card">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>Analyst</h4>
+                </div>
+                <div class="glass-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h4>Developer</h4>
+                </div>
+            </div>
         </div>
-      </a>
+    </section>
 
-      <a href="https://app.powerbi.com/view?r=eyJrIjoiYTFjZGQ5YWQtZjZlNS00Y2NmLWI5YzgtZTA2MDdhYTJkYjVkIiwidCI6Ijc0MjY4YzVhLWU1MjItNDY2YS1iMDg4LWQ0NDQ3MzNiNjJjOCJ9" target="_blank" class="project-card">
-        <img src="assets/images/project10.jpg" alt="Project 10" />
-        <div class="project-popup">
-          <h3>University Dashboard</h3>
-          <!-- <p>مشروع - مستشفى الملك فيصل التخصصي</p> -->
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2 class="section-heading">My <span>Skills</span></h2>
+            <div class="skills-grid">
+                <!-- Tech Stack -->
+                <div class="skill-card">
+                    <div class="skill-icon"><img src="assets/images/python.png" alt="Python"></div>
+                    <h3>Python</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><img src="assets/images/powerbi.png" alt="Power BI"></div>
+                    <h3>Power BI</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><img src="assets/images/excel.png" alt="Excel"></div>
+                    <h3>Excel</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><img src="assets/images/database.png" alt="SQL"></div>
+                    <h3>Databases</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><img src="assets/images/webscraping.png" alt="Scraping"></div>
+                    <h3>Web Scraping</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><img src="assets/images/gscript.png" alt="GAS"></div>
+                    <h3>App Script</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><img src="assets/images/appsheet.png" alt="AppSheet"></div>
+                    <h3>AppSheet</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><img src="assets/images/java.png" alt="Java"></div>
+                    <h3>Java</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><img src="assets/images/cpp.png" alt="C++"></div>
+                    <h3>C++</h3>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><img src="assets/images/vba.png" alt="VBA"></div>
+                    <h3>VBA</h3>
+                </div>
+            </div>
         </div>
-      </a>
+    </section>
 
-      <a href="https://app.powerbi.com/view?r=eyJrIjoiNDQ3ODYyZTctNjM0ZS00MzM1LThmMzEtMTdhMzY3MmNjYmJkIiwidCI6Ijc0MjY4YzVhLWU1MjItNDY2YS1iMDg4LWQ0NDQ3MzNiNjJjOCJ9" target="_blank" class="project-card">
-        <img src="assets/images/project2.jpg" alt="Project 2" />
-        <div class="project-popup">
-          <h3>Health Dashboard</h3>
-          <p>مشروع عن مراقبة الاداء الصحي</p>
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section">
+        <div class="container">
+            <h2 class="section-heading">Work <span>Experience</span></h2>
+            <div class="timeline">
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Instructor</h3>
+                            <span class="date">Current</span>
+                        </div>
+                        <h4 class="company">NTI - Ministry of Communications</h4>
+                        <p>Delivering technical training and guidance to trainees.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Data Analyst</h3>
+                            <span class="date">Previous</span>
+                        </div>
+                        <h4 class="company">Trickaa</h4>
+                        <p>Analyzed datasets to provide business insights and reporting.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Intern</h3>
+                            <span class="date">Internship</span>
+                        </div>
+                        <h4 class="company">Samsung</h4>
+                        <p>Gained hands-on experience in software and data operations.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Intern</h3>
+                            <span class="date">Internship</span>
+                        </div>
+                        <h4 class="company">Orange</h4>
+                        <p>Training in telecommunications and network data handling.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <h3>Trainee</h3>
+                            <span class="date">Training</span>
+                        </div>
+                        <h4 class="company">NTI</h4>
+                        <p>Intensive training program in advanced technologies.</p>
+                    </div>
+                </div>
+
+            </div>
         </div>
-      </a>
+    </section>
 
-       <a href="https://app.powerbi.com/view?r=eyJrIjoiYzkyZDY2YmQtYjNlMS00ZWUyLTgzNjItMzZlYjcxZDA3YTJkIiwidCI6Ijc0MjY4YzVhLWU1MjItNDY2YS1iMDg4LWQ0NDQ3MzNiNjJjOCJ9" target="_blank" class="project-card">
-        <img src="assets/images/project9.jpg" alt="Project 8" />
-        <div class="project-popup">
-          <h3>DARA Dashboard</h3>
-          <p>مشروع - شركة دارا</p>
+    <!-- Projects Section -->
+    <section id="portfolio" class="portfolio-section">
+        <div class="container">
+            <h2 class="section-heading">Featured <span>Projects</span></h2>
+            <p class="section-subtitle">+90 Projects Completed Successfully</p>
+
+            <div class="portfolio-grid">
+
+                <!-- Project 1 -->
+                <div class="portfolio-card">
+                    <div class="card-image">
+                        <img src="assets/images/project1.jpg" alt="Hospital Dashboard">
+                        <div class="card-overlay">
+                            <a href="project.html?id=hospital-dashboard-khaled" class="btn-view"><i
+                                    class="fas fa-eye"></i> View Details</a>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Hospital Dashboard</h3>
+                        <p>King Khaled Hospital Analysis</p>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="portfolio-card">
+                    <div class="card-image">
+                        <img src="assets/images/project3.jpg" alt="Sales Dashboard">
+                        <div class="card-overlay">
+                            <a href="project.html?id=sales-analytics" class="btn-view"><i class="fas fa-eye"></i> View
+                                Details</a>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Sales Analytics</h3>
+                        <p>Comprehensive Sales Data Analysis</p>
+                    </div>
+                </div>
+
+                <!-- Project 10 -->
+                <div class="portfolio-card">
+                    <div class="card-image">
+                        <img src="assets/images/project10.jpg" alt="University Dashboard">
+                        <div class="card-overlay">
+                            <a href="project.html?id=university-dashboard" class="btn-view"><i class="fas fa-eye"></i>
+                                View Details</a>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3>University Dashboard</h3>
+                        <p>Academic Performance Tracking</p>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="portfolio-card">
+                    <div class="card-image">
+                        <img src="assets/images/project2.jpg" alt="Health Dashboard">
+                        <div class="card-overlay">
+                            <a href="project.html?id=health-monitor" class="btn-view"><i class="fas fa-eye"></i> View
+                                Details</a>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Health Monitor</h3>
+                        <p>Health Performance Monitoring</p>
+                    </div>
+                </div>
+
+                <!-- Project 9 -->
+                <div class="portfolio-card">
+                    <div class="card-image">
+                        <img src="assets/images/project9.jpg" alt="DARA Dashboard">
+                        <div class="card-overlay">
+                            <a href="project.html?id=dara-project" class="btn-view"><i class="fas fa-eye"></i> View
+                                Details</a>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3>DARA Project</h3>
+                        <p>Corporate Analysis Dashboard</p>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="portfolio-card">
+                    <div class="card-image">
+                        <img src="assets/images/project4.jpg" alt="Qabdah Dashboard">
+                        <div class="card-overlay">
+                            <a href="project.html?id=qabdah-system" class="btn-view"><i class="fas fa-eye"></i> View
+                                Details</a>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Qabdah System</h3>
+                        <p>Contracts & Competitions Tracking</p>
+                    </div>
+                </div>
+
+                <!-- Project 5 -->
+                <div class="portfolio-card">
+                    <div class="card-image">
+                        <img src="assets/images/project5.jpg" alt="Alzad Dashboard">
+                        <div class="card-overlay">
+                            <a href="project.html?id=alzad-utility" class="btn-view"><i class="fas fa-eye"></i> View
+                                Details</a>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Alzad Utility</h3>
+                        <p>Charity Statistics Tracker</p>
+                    </div>
+                </div>
+
+                <!-- Project 6 -->
+                <div class="portfolio-card">
+                    <div class="card-image">
+                        <img src="assets/images/project6.jpg" alt="Abasco Dashboard">
+                        <div class="card-overlay">
+                            <a href="project.html?id=abasco-orders" class="btn-view"><i class="fas fa-eye"></i> View
+                                Details</a>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3>Abasco Orders</h3>
+                        <p>Monthly Order Management</p>
+                    </div>
+                </div>
+
+                <!-- Project 7 -->
+                <div class="portfolio-card">
+                    <div class="card-image">
+                        <img src="assets/images/project7.jpg" alt="Hospital v2">
+                        <div class="card-overlay">
+                            <a href="project.html?id=hospital-faisal" class="btn-view"><i class="fas fa-eye"></i> View
+                                Details</a>
+                        </div>
+                    </div>
+                    <div class="card-info">
+                        <h3>King Faisal Hospital</h3>
+                        <p>Specialized Medical Dashboard</p>
+                    </div>
+                </div>
+
+            </div>
         </div>
-      </a>
+    </section>
 
-
-
-
-
-      <a href="https://app.powerbi.com/view?r=eyJrIjoiOWQ2YzY4YTktZDk5Yy00MjcyLTk1Y2UtOTNlMmM1ZTg0ZjcyIiwidCI6Ijc0MjY4YzVhLWU1MjItNDY2YS1iMDg4LWQ0NDQ3MzNiNjJjOCJ9" target="_blank" class="project-card">
-
-        <img src="assets/images/project4.jpg" alt="Project 4" />
-
-        <div class="project-popup">
-
-          <h3>Qabdah Dashboard</h3>
-
-          <p>مشروع لمتابعة مشاكل العقود و المنافسات</p>
-
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <a href="#" class="logo footer-logo">M<span>.</span>Elkhateb</a>
+                <p>Let's build something amazing together.</p>
+                <a href="mailto:mohamedelkhateb329@gmail.com" class="email-link">mohamedelkhateb329@gmail.com</a>
+                <div class="social-links footer-socials">
+                    <a href="https://github.com" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/mohamed-el-khateb-039a3b247/" target="_blank"><i
+                            class="fab fa-linkedin-in"></i></a>
+                    <a href="https://khamsat.com/user/mohamed_elkhateb5" target="_blank"><i
+                            class="fas fa-briefcase"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Mohamed Elkhateb. All Rights Reserved.</p>
+            </div>
         </div>
+    </footer>
 
-      </a>
-
-
-
-      <a href="https://app.powerbi.com/view?r=eyJrIjoiOTU5MTM4NjQtZmRlNC00MjMxLTg0OTMtYTgyZDc1ZTE4M2U1IiwidCI6Ijc0MjY4YzVhLWU1MjItNDY2YS1iMDg4LWQ0NDQ3MzNiNjJjOCJ9" target="_blank" class="project-card">
-
-        <img src="assets/images/project5.jpg" alt="Project 5" />
-
-        <div class="project-popup">
-
-          <h3>Alzad Dashboard</h3>
-
-          <p>مشروع لمتابعة احصائيات الجمعية الخيرية</p>
-
-        </div>
-
-      </a>
-
-
-
-      <a href="https://app.powerbi.com/view?r=eyJrIjoiYWI0YWNiOGItNzIyOS00N2NiLWE3MjctMGIxNGFmYTU3YTgzIiwidCI6Ijc0MjY4YzVhLWU1MjItNDY2YS1iMDg4LWQ0NDQ3MzNiNjJjOCJ9" target="_blank" class="project-card">
-        <img src="assets/images/project6.jpg" alt="Project 6" />
-        <div class="project-popup">
-          <h3>Abasco Dashboard</h3>
-          <p>مشروع شهري لمتابعة طلبات الشركة</p>
-        </div>
-      </a>
-      
-      <a href="https://app.powerbi.com/view?r=eyJrIjoiZjRlZTc3ZjQtMzJjMi00NTBkLWI3NjMtYjAxMThjOWE4NTBjIiwidCI6Ijc0MjY4YzVhLWU1MjItNDY2YS1iMDg4LWQ0NDQ3MzNiNjJjOCJ9" target="_blank" class="project-card">
-        <img src="assets/images/project7.jpg" alt="Project 7" />
-        <div class="project-popup">
-          <h3>Hospital Dashboard</h3>
-          <p>مشروع - مستشفى الملك فيصل التخصصي</p>
-        </div>
-      </a>
-
-      <a href="https://app.powerbi.com/view?r=eyJrIjoiMzRhMDcwMmYtZDAwYi00YzI3LTlhYTktZTMyZWRmMDVkYjIwIiwidCI6Ijc0MjY4YzVhLWU1MjItNDY2YS1iMDg4LWQ0NDQ3MzNiNjJjOCJ9" target="_blank" class="project-card">
-        <img src="assets/images/project8.jpg" alt="Project 8" />
-        <div class="project-popup">
-          <h3>Goal Dashboard</h3>
-          <p>مشروع - جوال الخيرية</p>
-        </div>
-      </a>
-
-
-
-      
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2025 Mohamed Elkhateb | All Rights Reserved</p>
-  </footer>
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
-</html>
 
+</html>

@@ -1,66 +1,104 @@
-// Scroll animations
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("visible");
+// DOM Elements
+const navbar = document.querySelector('.navbar');
+const hamburger = document.querySelector('.hamburger');
+const navLinks = document.querySelector('.nav-links');
+const typedTextSpan = document.querySelector('.typed-text');
+const links = document.querySelectorAll('.nav-links li');
 
-        // لو العنصر يحتوي على عناصر داخلية (زي .info أو .skills-grid)
-        const children = entry.target.querySelectorAll("div, img, p, h1, h2, a");
-        children.forEach((child, i) => {
-          setTimeout(() => {
-            child.classList.add("visible");
-          }, i * 150); // تأخير بسيط لكل عنصر لعمل تأثير متتابع
-        });
-      }
+// Sticky Navbar Logic
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 50) {
+        navbar.classList.add('scrolled');
+    } else {
+        navbar.classList.remove('scrolled');
+    }
+});
+
+// Mobile Menu Toggle
+hamburger.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    hamburger.classList.toggle('active');
+    
+    // Animate Links
+    links.forEach((link, index) => {
+        if (link.style.animation) {
+            link.style.animation = '';
+        } else {
+            link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+        }
     });
-  },
-  { threshold: 0.2 }
-);
+});
 
+// Close Mobile Menu when clicking a link
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        hamburger.classList.remove('active');
+    });
+});
 
-
-
-
-
-
-// ===== Typing effect for job titles =====
-const typedTextSpan = document.querySelector(".typed-text");
-const cursorSpan = document.querySelector(".cursor");
-
-const textArray = ["Data Analyst", "Instructor", "BI Specialist"];
-const typingDelay = 120;
-const erasingDelay = 80;
-const newTextDelay = 1500;
-let textArrayIndex = 0;
+// Typing Effect
+const typedWords = ["Data Analyst", "Computer Engineer", "Problem Solver"];
+let wordIndex = 0;
 let charIndex = 0;
+let isDeleting = false;
+let typeDelay = 100;
 
 function type() {
-  if (charIndex < textArray[textArrayIndex].length) {
-    if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
-    typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
-    charIndex++;
-    setTimeout(type, typingDelay);
-  } else {
-    cursorSpan.classList.remove("typing");
-    setTimeout(erase, newTextDelay);
-  }
+    const currentWord = typedWords[wordIndex];
+    
+    if (isDeleting) {
+        typedTextSpan.textContent = currentWord.substring(0, charIndex - 1);
+        charIndex--;
+        typeDelay = 50;
+    } else {
+        typedTextSpan.textContent = currentWord.substring(0, charIndex + 1);
+        charIndex++;
+        typeDelay = 100;
+    }
+
+    if (!isDeleting && charIndex === currentWord.length) {
+        isDeleting = true;
+        typeDelay = 2000; // Pause at end of word
+    } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % typedWords.length;
+        typeDelay = 500;
+    }
+
+    setTimeout(type, typeDelay);
 }
 
-function erase() {
-  if (charIndex > 0) {
-    if (!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
-    typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex - 1);
-    charIndex--;
-    setTimeout(erase, erasingDelay);
-  } else {
-    cursorSpan.classList.remove("typing");
-    textArrayIndex++;
-    if (textArrayIndex >= textArray.length) textArrayIndex = 0;
-    setTimeout(type, typingDelay + 500);
-  }
-}
+document.addEventListener('DOMContentLoaded', type);
 
-document.addEventListener("DOMContentLoaded", () => {
-  if (textArray.length) setTimeout(type, 1000);
+// Scroll Animations (Intersection Observer)
+const observerOptions = {
+    threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('animate-in');
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
+
+// Elements to animate
+document.querySelectorAll('.skill-card, .portfolio-card, .timeline-item').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(20px)';
+    el.style.transition = 'all 0.6s ease-out';
+    observer.observe(el);
 });
+
+// Add animation class via JS for control
+const styleSheet = document.createElement("style");
+styleSheet.innerText = `
+    .animate-in {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+`;
+document.head.appendChild(styleSheet);
