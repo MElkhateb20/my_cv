@@ -14,11 +14,19 @@ window.addEventListener('scroll', () => {
     }
 });
 
+// Set Blurred Background for Portfolio Cards
+document.querySelectorAll('.card-image').forEach(card => {
+    const img = card.querySelector('img');
+    if (img) {
+        card.style.backgroundImage = `url('${img.src}')`;
+    }
+});
+
 // Mobile Menu Toggle
 hamburger.addEventListener('click', () => {
     navLinks.classList.toggle('active');
     hamburger.classList.toggle('active');
-    
+
     // Animate Links
     links.forEach((link, index) => {
         if (link.style.animation) {
@@ -38,7 +46,7 @@ document.querySelectorAll('.nav-links a').forEach(link => {
 });
 
 // Typing Effect
-const typedWords = ["Data Analyst", "Computer Engineer", "Problem Solver"];
+const typedWords = ["Instructor", "Data Analyst", "Data Scientist", "ML Engineer"];
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
@@ -46,7 +54,7 @@ let typeDelay = 100;
 
 function type() {
     const currentWord = typedWords[wordIndex];
-    
+
     if (isDeleting) {
         typedTextSpan.textContent = currentWord.substring(0, charIndex - 1);
         charIndex--;

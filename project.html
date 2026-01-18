@@ -30,6 +30,7 @@
             margin-bottom: 10px;
             background: linear-gradient(to right, #fff, #94a3b8);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
@@ -39,20 +40,42 @@
             margin-bottom: 40px;
         }
 
-        .project-main-image {
+        .image-backdrop {
+            position: relative;
             width: 100%;
-            height: auto;
-            max-height: 600px;
-            /* Increased height */
-            object-fit: contain;
-            /* Shows full image */
-            background-color: rgba(0, 0, 0, 0.5);
-            /* Background for non-square images */
+            max-width: 1000px;
+            height: 500px;
+            margin: 0 auto;
             border-radius: 20px;
+            overflow: hidden;
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            /* Stretch to fill for blur source */
             border: 1px solid var(--glass-border);
             box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
-            padding: 10px;
-            /* Slight padding */
+        }
+
+        /* The blurry layer */
+        .image-backdrop::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: inherit;
+            /* Uses the parent's background image */
+            filter: blur(25px) brightness(0.5);
+            transform: scale(1.1);
+            /* Prevent blur edges */
+        }
+
+        .project-main-image {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            z-index: 2;
         }
 
         .project-content-grid {
@@ -179,7 +202,9 @@
         <section class="project-hero">
             <h1 id="p-title">Project Title</h1>
             <h2 id="p-category">Project Category</h2>
-            <img id="p-image" src="" alt="Project Image" class="project-main-image">
+            <div id="p-image-container" class="image-backdrop">
+                <img id="p-image" src="" alt="Project Image" class="project-main-image">
+            </div>
         </section>
 
         <!-- Content -->
@@ -266,6 +291,9 @@
             document.getElementById('p-title').textContent = project.title;
             document.getElementById('p-category').textContent = project.category;
             document.getElementById('p-image').src = project.image;
+            // Set background for blur effect
+            document.getElementById('p-image-container').style.backgroundImage = `url('${project.image}')`;
+
             document.getElementById('p-link').href = project.dashboardLink;
             document.getElementById('p-summary').textContent = project.summary;
 
@@ -275,8 +303,16 @@
                 modelingImg.src = project.modelingImage;
                 modelingImg.style.display = 'block';
             } else {
-                // Fallback if no image provided? Or hide?
                 modelingImg.style.display = 'none';
+            }
+
+            // Handle Modeling Description
+            const modelingDesc = document.getElementById('p-modeling-desc');
+            if (project.modeling) {
+                modelingDesc.textContent = project.modeling;
+                modelingDesc.style.display = 'block';
+            } else {
+                modelingDesc.style.display = 'none';
             }
 
             // Handle Document Button
