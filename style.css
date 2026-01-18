@@ -896,4 +896,21 @@ footer {
         margin-left: 60px;
         text-align: left;
     }
+
+    /* Mobile Layout Adjustment */
+    .mobile-only {
+        display: flex !important;
+        margin: 20px auto 30px !important;
+    }
+
+    .desktop-only {
+        display: none !important;
+    }
+}
+
+/* Default Visibility for Desktop (Hidden on mobile via media query above) */
+@media (min-width: 769px) {
+    .mobile-only {
+        display: none !important;
+    }
 }
