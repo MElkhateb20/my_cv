@@ -297,22 +297,43 @@
             document.getElementById('p-link').href = project.dashboardLink;
             document.getElementById('p-summary').textContent = project.summary;
 
-            // Handle Modeling Image
+            // Handle Modeling Section
             const modelingImg = document.getElementById('p-modeling-img');
-            if (project.modelingImage) {
-                modelingImg.src = project.modelingImage;
-                modelingImg.style.display = 'block';
-            } else {
-                modelingImg.style.display = 'none';
-            }
-
-            // Handle Modeling Description
             const modelingDesc = document.getElementById('p-modeling-desc');
-            if (project.modeling) {
-                modelingDesc.textContent = project.modeling;
-                modelingDesc.style.display = 'block';
+            const modelingSection = modelingImg.parentElement; // The Data Modeling card
+
+            // List of projects that have modeling images
+            const availableModelingImages = [
+                "DARA Project",
+                "Health Monitor",
+                "Hospital Dashboard",
+                "Qabdah System",
+                "Sales Analytics",
+                "University Dashboard"
+            ];
+
+            if (availableModelingImages.includes(project.title)) {
+                // Show Image
+                modelingImg.src = `assets/Modeling/${project.title}.jpg`;
+                modelingImg.style.display = 'block';
+                modelingDesc.style.display = 'none'; // Hide text description
+                
+                // Remove existing "SOON" msg if any (re-runs)
+                const existingMsg = modelingSection.querySelector('.unavailable-msg');
+                if(existingMsg) existingMsg.remove();
+
             } else {
-                modelingDesc.style.display = 'none';
+                // Show "SOON"
+                modelingImg.style.display = 'none';
+                modelingDesc.style.display = 'none'; 
+
+                // Check if msg already added to avoid duplicates
+                if (!modelingSection.querySelector('.unavailable-msg')) {
+                    const soonMsg = document.createElement('div');
+                    soonMsg.className = 'unavailable-msg';
+                    soonMsg.textContent = 'SOON';
+                    modelingSection.appendChild(soonMsg);
+                }
             }
 
             // Handle Document Button

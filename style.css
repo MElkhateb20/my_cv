@@ -1155,3 +1155,15 @@ footer {
     color: var(--text-main);
     transform: translateX(-5px);
 }
+
+.unavailable-msg {
+    text-align: center;
+    color: var(--text-muted);
+    font-size: 1.5rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 10px;
+    border: 1px dashed var(--glass-border);
+}
