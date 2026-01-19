@@ -495,6 +495,13 @@ section {
     object-fit: contain;
 }
 
+.skill-icon i {
+    font-size: 50px;
+    margin: 0 auto 15px;
+    display: block;
+    color: var(--accent-color);
+}
+
 .skill-card h3 {
     font-size: 1rem;
     font-weight: 500;
