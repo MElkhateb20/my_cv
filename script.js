@@ -110,3 +110,121 @@ styleSheet.innerText = `
     }
 `;
 document.head.appendChild(styleSheet);
+
+// =========================================
+// NTI BUTTONS LOGIC
+// =========================================
+
+const modal = document.getElementById('media-modal');
+const modalTitle = document.getElementById('modal-title');
+const modalBody = document.getElementById('modal-body');
+const closeModal = document.querySelector('.close-modal');
+
+// Close Modal Logic
+function hideModal() {
+    modal.classList.remove('show');
+    setTimeout(() => {
+        modal.style.display = 'none';
+        modalBody.innerHTML = ''; // Clear content
+    }, 300);
+}
+
+if (closeModal) {
+    closeModal.addEventListener('click', hideModal);
+}
+
+window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        hideModal();
+    }
+});
+
+// Open Modal Function
+function openModal(title, contentHTML) {
+    modalTitle.textContent = title;
+    modalBody.innerHTML = contentHTML;
+    modal.style.display = 'flex';
+    // Small delay to allow display:flex to apply before adding opacity class
+    setTimeout(() => {
+        modal.classList.add('show');
+    }, 10);
+}
+
+// View Moments Logic
+const ntiImages = [
+    "20250731_193540.jpg",
+    "20250731_193555.jpg",
+    "20250731_193733.jpg",
+    "20250731_194454.jpg",
+    "IMG-20251012-WA0041.jpg",
+    "IMG-20251012-WA0044.jpg",
+    "IMG-20251012-WA0046.jpg",
+    "IMG-20251012-WA0048.jpg",
+    "IMG-20251013-WA0022.jpg",
+    "IMG-20251013-WA0026.jpg",
+    "IMG-20251206-WA0015.jpg",
+    "IMG-20260118-WA0044.jpg",
+    "IMG-20260118-WA0059.jpg",
+    "IMG-20260118-WA0070.jpg",
+    "Screenshot 2026-01-19 200137.jpg"
+];
+
+const btnMoments = document.getElementById('btn-nti-moments');
+if (btnMoments) {
+    btnMoments.addEventListener('click', () => {
+        let imagesHTML = '<div class="modal-grid">';
+        ntiImages.forEach(img => {
+            imagesHTML += `<img src="assets/NTI/${img}" alt="NTI Moment" onclick="window.open(this.src, '_blank')">`;
+        });
+        imagesHTML += '</div>';
+        openModal('NTI - Moments', imagesHTML);
+    });
+}
+
+// Recording Logic
+const ntiRecordings = [
+    { title: "SQL - P1", id: "1sn4uHTp71tbzT095jVOmEtn9plRylIQt" },
+    { title: "SQL - P3", id: "1FiDfuh2V0fVCfSX0-khKMBKIyXbOuJ1B" },
+    { title: "Sales", id: "14dXS6kKOKa_0mF-F02wXS5ZW3HkjS6aZ" },
+    { title: "HR Project", id: "1aFuM4mOofV5-1yMTnkM-VZDgAd4ac0r-" }
+];
+
+function showRecordingsList() {
+    let recordingsHTML = '<div class="modal-list">';
+    ntiRecordings.forEach(rec => {
+        recordingsHTML += `
+            <div class="video-link-item" onclick="playVideo('${rec.id}', '${rec.title}')" style="cursor: pointer;">
+                <div class="video-icon"><i class="fas fa-play"></i></div>
+                <div class="video-info">
+                    <h4>${rec.title}</h4>
+                    <p>Click to watch recording</p>
+                </div>
+            </div>
+        `;
+    });
+    recordingsHTML += '</div>';
+    openModal('NTI - Recordings', recordingsHTML);
+}
+
+function playVideo(id, title) {
+    const videoHTML = `
+        <button class="btn-back" id="btn-back-to-list"><i class="fas fa-arrow-left"></i> Back to List</button>
+        <div class="video-container">
+            <iframe src="https://drive.google.com/file/d/${id}/preview" allow="autoplay"></iframe>
+        </div>
+    `;
+    modalBody.innerHTML = videoHTML;
+    modalTitle.textContent = title;
+
+    // Attach event listener to back button
+    document.getElementById('btn-back-to-list').addEventListener('click', () => {
+        showRecordingsList();
+    });
+}
+
+const btnRecordings = document.getElementById('btn-nti-recordings');
+if (btnRecordings) {
+    btnRecordings.addEventListener('click', () => {
+        showRecordingsList();
+    });
+}
