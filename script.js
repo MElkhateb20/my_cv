@@ -151,6 +151,7 @@ function openModal(title, contentHTML) {
 }
 
 // View Moments Logic
+// View Moments Logic
 const ntiImages = [
     "20250731_193540.jpg",
     "20250731_193555.jpg",
@@ -169,15 +170,46 @@ const ntiImages = [
     "Screenshot 2026-01-19 200137.jpg"
 ];
 
+function showMomentsGrid() {
+    let imagesHTML = '<div class="modal-grid">';
+    ntiImages.forEach(img => {
+        imagesHTML += `<img src="assets/NTI/${img}" alt="NTI Moment" onclick="viewSingleImage('${img}')">`;
+    });
+    imagesHTML += '</div>';
+    openModal('NTI - Moments', imagesHTML);
+}
+
+function viewSingleImage(imgName) {
+    const fullImgSrc = `assets/NTI/${imgName}`;
+    const singleImageHTML = `
+        <button class="btn-back" id="btn-back-to-moments"><i class="fas fa-arrow-left"></i> Back to Gallery</button>
+        <div class="single-image-view" style="display: flex; justify-content: center; align-items: center; background: rgba(0,0,0,0.2); padding: 10px; border-radius: 8px;">
+            <img src="${fullImgSrc}" alt="NTI Moment Full" style="max-width: 100%; max-height: 80vh; object-fit: contain; border-radius: 4px;">
+        </div>
+    `;
+    
+    // Update modal content directly
+    const modalTitle = document.getElementById('modal-title');
+    const modalBody = document.getElementById('modal-body');
+    
+    if (modalTitle) modalTitle.textContent = 'NTI - Zoomed Moment';
+    if (modalBody) {
+        modalBody.innerHTML = singleImageHTML;
+        
+        // Attach event listener to back button
+        const backBtn = document.getElementById('btn-back-to-moments');
+        if (backBtn) {
+            backBtn.addEventListener('click', () => {
+                showMomentsGrid();
+            });
+        }
+    }
+}
+
 const btnMoments = document.getElementById('btn-nti-moments');
 if (btnMoments) {
     btnMoments.addEventListener('click', () => {
-        let imagesHTML = '<div class="modal-grid">';
-        ntiImages.forEach(img => {
-            imagesHTML += `<img src="assets/NTI/${img}" alt="NTI Moment" onclick="window.open(this.src, '_blank')">`;
-        });
-        imagesHTML += '</div>';
-        openModal('NTI - Moments', imagesHTML);
+        showMomentsGrid();
     });
 }
 
